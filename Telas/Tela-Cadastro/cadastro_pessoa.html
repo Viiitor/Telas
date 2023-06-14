@@ -9,42 +9,54 @@
     <title>Registro</title>
 </head>
 
-</body>
 
 </html>
 <div class="form-container">
     <img src="logo.png" alt="Login Image" class="login-image">
-    <form class="form">
+    <form class="form" onsubmit="return validarCPF();">
         <div class="input-group">
             <label for="user">Usuário</label>
-            <input type="text" name="user" id="user" placeholder="Digite seu Nome de Usuário">
+            <input type="text" name="user" id="user" placeholder="Digite seu Nome de Usuário" required>
         </div>
         
         <div class="input-group">
-            <label for="cpf">CPF</label>
-            <input type="text" name="CPF" id="CPF" placeholder="Digite seu CPF">
+            <label for="CPF">CPF</label>
+            <input type="text" name="CPF" id="CPF" placeholder="Digite seu CPF" oninput="formatarCPF(this)" required>
+            <div id="cpfError" class="error-message"></div>
         </div>
+
+
         <div class="input-group">
-            <label for="username">E-mail</label>
-            <input type="text" name="username" id="username" placeholder="Digite seu E-mail">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" placeholder="Digite seu E-mail" required>
+            <div id="emailError" class="error-message"></div>
         </div>
+        
         <div class="input-group">
-            <label for="username">Confirme seu E-mail</label>
-            <input type="text" name="username" id="username" placeholder="Confirme seu E-mail">
+            <label for="confirmEmail">Confirme seu E-mail</label>
+            <input type="email" name="confirmEmail" id="confirmEmail" placeholder="Confirme seu E-mail" required>
+            <div id="confirmEmailError" class="error-message"></div>
         </div>
+        
         <div class="input-group">
             <label for="password">Senha</label>
-            <input type="password" name="password" id="password" placeholder="Digite sua Senha">
-            <div class="forgot">
+            <input type="password" name="password" id="password" placeholder="Digite sua Senha" required>
+            <div id="passwordError" class="error-message"></div>
         </div>
+        
         <div class="input-group">
-            <label for="password">Confirme sua Senha</label>
-            <input type="password" name="password" id="password" placeholder="Confirme sua Senha">
-            <div class="forgot">
-                
-        <button class="sign">Cadastrar</button>
+            <label for="confirmPassword">Confirme sua Senha</label>
+            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirme sua Senha" required>
+            <div id="confirmPasswordError" class="error-message"></div>
+        </div>
+
+        <button class="sign" onclick="validarFormulario()">Cadastrar</button>
+
+
     </form>
    
 </div>
+
+<script src="cadastro.js"></script>
 
 </html>
